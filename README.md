@@ -22,7 +22,7 @@ Add to config.js:
         module: "MMM-SmartEvents",
         position: "top_left",
         config: {
-            maxEvents: 8,
+            maxEvents: 5,
             events: {
                 solar: [
                     {
