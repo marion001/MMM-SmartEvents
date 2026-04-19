@@ -1,0 +1,92 @@
+.MMM-SmartEvents {
+    width: fit-content;
+    max-width: 420px;
+    margin: 0;
+    padding: 0;
+}
+
+.MMM-SmartEvents table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.MMM-SmartEvents td {
+    padding: 5px 6px;
+    vertical-align: top;
+}
+
+/* CỘT TITLE - CHO PHÉP XUỐNG DÒNG */
+.MMM-SmartEvents .title {
+    width: 38%;
+    /* font-size: 1.02em; */
+    /* font-weight: 600; */
+    color: #ffffff;
+    word-break: break-word;     /* Cho phép xuống dòng */
+    white-space: normal;        /* Cho phép xuống dòng */
+    /* line-height: 1.35;           Khoảng cách dòng */
+}
+
+/* CỘT NGÀY DƯƠNG (Thứ + Ngày) - DỄ NHÌN HƠN */
+.MMM-SmartEvents .date {
+    width: 37%;
+    text-align: center;
+    font-size: 0.9em;
+    color: #dddddd;
+    line-height: 1.35;
+}
+
+/* Phần ngày dương (Thứ + ngày tháng) */
+.MMM-SmartEvents .date .solar {
+    color: #ffffff;
+    font-weight: 500;
+}
+
+/* LỊCH ÂM - MÀU RIÊNG BIỆT */
+.MMM-SmartEvents .lunar {
+    font-size: 0.9em;
+    color: #77ddff;
+    opacity: 0.9;
+    margin-top: 2px;
+    display: block;
+}
+
+/*  CỘT SỐ NGÀY */
+.MMM-SmartEvents .days {
+    width: 25%;
+    text-align: right;
+    /* font-weight: 700; */
+    font-size: 0.96em;
+}
+
+.MMM-SmartEvents .birthday-title {
+    color: #ffeb3b;
+    text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+    animation: birthdayGlow 1.5s infinite alternate;
+}
+
+@keyframes birthdayGlow {
+    from { opacity: 0.8; }
+    to { opacity: 1; }
+}
+
+.MMM-SmartEvents .module-header {
+    color: #00ffcc !important;
+    font-weight: 700;
+    text-shadow: 0 0 10px #00ffcc;
+    animation: headerGlow 2s infinite alternate;
+}
+
+@keyframes headerGlow {
+    from {
+        text-shadow: 0 0 6px #00ffcc;
+    }
+    to {
+        text-shadow: 0 0 20px #00ffcc;
+    }
+}
+/* MÀU NỔI BẬT */
+.MMM-SmartEvents .today          { color: #00e5ff; text-shadow: 0 0 6px #00e5ff; }
+.MMM-SmartEvents .birthday-today { color: #ffeb3b; text-shadow: 0 0 10px #ffeb3b; }
+.MMM-SmartEvents .one-day        { color: #00ffcc; text-shadow: 0 0 8px #00ffcc; }
+.MMM-SmartEvents .soon           { color: #ffcc33; }
