@@ -68,21 +68,26 @@ Module.register("MMM-SmartEvents", {
         this.startNotificationChecker();
     },
     //HÀM KIỂM TRA VÀ GỌI TTS
-    startNotificationChecker: function() {
-        //Kiểm tra ngay khi module khởi động
-        this.checkAndNotifyToday();
-        this.lastDay = new Date().getDate();
-        setInterval(() => {
-            let now = new Date();
-            //reset mỗi ngày
-            if (now.getDate() !== this.lastDay) {
-                this._notifiedMap = {};
-                this.lastDay = now.getDate();
-                //console.log("🔄 Reset TTS trạng thái ngày mới");
-            }
-            this.checkAndNotifyToday();
-        }, 60 * 1000);
-    },
+	startNotificationChecker: function() {
+
+		this.checkAndNotifyToday();
+		this.lastDay = new Date().getDate();
+
+		setInterval(() => {
+			let now = new Date();
+			//SANG NGÀY MỚI
+			if (now.getDate() !== this.lastDay) {
+				this._notifiedMap = {};
+				this.lastDay = now.getDate();
+				console.log("🔄 Sang ngày mới");
+				//refresh UI
+				this.updateDom(1000);
+			}
+			this.checkAndNotifyToday();
+			//update mỗi phút
+			this.updateDom(500);
+		}, 60 * 1000);
+	},
     checkAndNotifyToday: function() {
         let now = new Date();
         let currentMinutes = now.getHours() * 60 + now.getMinutes();
